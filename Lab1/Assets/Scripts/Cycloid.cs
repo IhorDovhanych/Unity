@@ -6,23 +6,21 @@ using UnityEngine;
 
 public class NewBehaviourScript : MonoBehaviour
 {
-    public Rigidbody sphere;
+    private Rigidbody sphere;
     public int radius;
-    private float startTime;
-    private float startX;
+    private float startX, startY;
     void Start()
     {
         sphere = GetComponent<Rigidbody>();
-        startTime = Time.time;
         startX = sphere.position.x;
+        startY = sphere.position.y;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        float t = Time.time - startTime;
-        float x = startX + radius * (t-Mathf.Sin(t));
-        
-        sphere.position = new Vector3(x, sphere.position.y, sphere.position.z);
+        float t = Time.time;
+        float x = startX + radius * (t - Mathf.Sin(t));
+        float y = startY + radius * (1 - Mathf.Cos(t));
+        sphere.position = new Vector3(x, y, sphere.position.z);
     }
 }
