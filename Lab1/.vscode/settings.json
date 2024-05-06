@@ -51,5 +51,6 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Lab1.sln"
+    "dotnet.defaultSolution": "Lab1.sln",
+    "deepscan.ignoreConfirmWarning": true
 }
