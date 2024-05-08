@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -59,5 +60,13 @@ public class PlayerController : MonoBehaviour
         isSprinting = true;
         yield return new WaitForSeconds(sprintDuration);
         isSprinting = false;
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if(!other.gameObject.layer.Equals(LayerMask.NameToLayer("Ground")))
+        {
+            GameManager.Instance.IncrementCollisionCount();
+        }
     }
 }

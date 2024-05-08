@@ -52,5 +52,10 @@
         "Temp/": true
     },
     "dotnet.defaultSolution": "Lab1.sln",
-    "deepscan.ignoreConfirmWarning": true
+    "deepscan.ignoreConfirmWarning": true,
+    "cSpell.words": [
+        "Behaviour",
+        "Dont",
+        "Prefs"
+    ]
 }
